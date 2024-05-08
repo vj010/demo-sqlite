@@ -1,5 +1,6 @@
 #include <rpl_loop.h>
-
+#include <memory>
+#include <parser.h>
 void RPLLoop::beginLoop()
 {
     stopLoop = false;
@@ -12,6 +13,8 @@ void RPLLoop::beginLoop()
 
         std::cout << "db>";
         readInput();
+        std::shared_ptr<Query> query = Parser::parse(inputBuffer);
+        std::cout << "query type:" << query->getType() << std::endl;
     }
 }
 

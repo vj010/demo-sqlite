@@ -59,3 +59,7 @@
 .DS_Store
 .idea/
 *.swp
+
+
+#vscode
+.vscode
